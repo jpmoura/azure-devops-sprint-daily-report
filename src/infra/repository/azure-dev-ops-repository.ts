@@ -1,6 +1,6 @@
 import * as AzureDevOps from 'azure-devops-node-api';
 import { TeamContext, TeamProjectReference, WebApiTeam } from 'azure-devops-node-api/interfaces/CoreInterfaces';
-import { TeamSettingsIteration } from 'azure-devops-node-api/interfaces/WorkInterfaces';
+import { TeamSettingsIteration, TimeFrame } from 'azure-devops-node-api/interfaces/WorkInterfaces';
 import { WorkItemLink, WorkItemReference } from 'azure-devops-node-api/interfaces/WorkItemTrackingInterfaces';
 import { Logger } from 'tslog';
 import puppeteer from 'puppeteer';
@@ -148,8 +148,7 @@ export default class AzureDevOpsRepository {
     const workApiClient = await this.connection.getWorkApi();
     const iterations = await workApiClient.getTeamIterations(teamContext);
 
-    // return iterations?.find((iteration) => iteration.attributes?.timeFrame === TimeFrame.Current);
-    return iterations?.find((iteration) => iteration.name === 'Sprint 3.1');
+    return iterations?.find((iteration) => iteration.attributes?.timeFrame === TimeFrame.Current);
   }
 
   async getSprintBacklog(projectName: string, teamName: string, sprint: TeamSettingsIteration): Promise<Array<CustomWorkItem>> {

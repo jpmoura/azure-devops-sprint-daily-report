@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-sprint-daily-report",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An automatic application that sends daily reports based on Azure DevOps information",
   "main": "index.js",
   "repository": "https://github.com/jpmoura/azure-devops-sprint-daily-report.git",
