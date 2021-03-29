@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "npx tsc && node dist/index.js",
-    "copy-files": "cp ./assets ./dist/"
+    "test:ci": "echo TODO"
   },
   "husky": {
     "hooks": {
