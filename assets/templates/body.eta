@@ -1,0 +1,52 @@
+<div style="overflow-x:auto;">
+  <h1><%= it.sprint.name %> (de <%= `${it.sprint.attributes.startDate.getDate() + 1}/${it.sprint.attributes.startDate.getMonth() + 1}` %> até <%= `${it.sprint.attributes.finishDate.getDate() + 1}/${it.sprint.attributes.finishDate.getMonth() + 1}` %>)</h1>
+  <table id="backlog">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Pontos</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% it.backlog.forEach(function(backlogItem) { %>
+      <%
+        var stateClass = '';
+        var stateText = '';
+        switch(backlogItem.state) {
+          case 'New':
+            stateClass = 'sprint-backlog';
+            stateText = 'Sprint Backlog';
+            break;
+          case 'Dev':
+            stateClass = 'development';
+            stateText = 'Em Desenvolvimento';
+            break;
+          case 'Homologação':
+            stateClass = 'homologation';
+            stateText = 'Em Homologação';
+            break;
+          case 'Closed':
+            stateClass = 'closed';
+            stateText = 'Finalizado';
+            break;
+        }
+      %>
+    <tr>
+      <td class="text-center"><%= backlogItem.id %></td>
+      <td class="text-center"><%= backlogItem.type %></td>
+      <td><a href="<%= backlogItem.url %>" target="_blank"><%= backlogItem.title %></a></td>
+      <td class="text-center"><%= backlogItem.storyPoints || 'N/A' %></td>
+      <td class="<%= stateClass %> text-center"><%= stateText %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h1>Saúde da sprint</h1>
+  <img src="data:image/png;base64,<%= it.burndown %>" alt="Burndown <%= it.sprint.name %>" />
+</div>
