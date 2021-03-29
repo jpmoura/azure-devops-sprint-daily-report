@@ -18,7 +18,8 @@ export default class SendDailyReportUseCase {
       },
     });
 
-    const subject = `[${request.teamName}] Daily Report${request.sprintName ? ` - ${request.sprintName}` : ''}`;
+    const sprintName = request.sprintName ? ` - ${request.sprintName}` : '';
+    const subject = `[${request.teamName}] Daily Report${sprintName}`;
 
     try {
       await transporter.sendMail({
