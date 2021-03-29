@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <title>Report Diário</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <style>
+    html, body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .sprint-backlog {
+      background-color: #512D6D;
+      color: white;
+    }
+
+    .development {
+      background-color: #2055A6;
+      color: white;
+    }
+
+    .homologation {
+      background-color: #33B4C4;
+      color: white;
+    }
+
+    .blocked {
+      background-color: #F06400;
+      color: #000
+    }
+
+    .closed {
+      background-color: #A8C700;
+      color: #000
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    #backlog {
+      border-collapse: collapse;
+    }
+
+    #backlog td, #backlog th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #backlog th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #1b82fc;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <%~ await includeFile('./header') %>
+  <%~ await includeFile('./body', it) %>
+  <%~ await includeFile('./footer') %>
+</body>
+
+</html>
