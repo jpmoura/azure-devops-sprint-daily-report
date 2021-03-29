@@ -182,9 +182,7 @@ export default class AzureDevOpsRepository {
     }
 
     const teamContext = AzureDevOpsRepository.buildTeamContext(project, team);
-    const workItems = await this.getCustomWorkItems(teamContext, sprint.id);
-
-    return workItems;
+    return this.getCustomWorkItems(teamContext, sprint.id);
   }
 
   async getCustomSprintBurndown(projectName: string, teamName: string, sprint: TeamSettingsIteration): Promise<string> {

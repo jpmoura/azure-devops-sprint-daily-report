@@ -1,4 +1,10 @@
-# 📄 azure-devops-sprint-daily-report
+# 📄 Azure DevOps Sprint Daily Report
+[![Main Workflow](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/main.yml/badge.svg)](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/main.yml)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=bugs)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=code_smells)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=coverage)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
+
 This is an automatic application that sends daily reports based on Azure DevOps information built with Node.js using TypeScript. It consumed the DevOps API to gather all relevant information about the team's current iteration, format as HTML email and send to a list of stakeholders.
 
 The main goal is to schedule this application to execute daily in a server so every business day the report about the iteration status will be sended to a list of stakeholders, freeing the dev team time to focus on what really matters.
