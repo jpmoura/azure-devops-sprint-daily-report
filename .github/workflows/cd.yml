@@ -71,18 +71,10 @@ jobs:
 
       - name: Deploy Development
         if: github.ref == 'refs/heads/develop'
-        uses: serverless/github-action@master
-        with:
-          args: deploy --region ${{ secrets.AWS_REGION }} --stage dev --org jpmoura --app daily-report-sender --use-local-credentials
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run : |
+          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage dev --verbose
 
       - name: Deploy Production
         if: github.ref == 'refs/heads/master'
-        uses: serverless/github-action@master
-        with:
-          args: deploy --region ${{ secrets.AWS_REGION }} --stage prod --org jpmoura --app daily-report-sender --use-local-credentials
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run : |
+          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage prod --verbose
