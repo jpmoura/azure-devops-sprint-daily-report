@@ -1,5 +1,6 @@
-# 📄 Azure DevOps Sprint Daily Report Sender
-[![Main Workflow](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/main.yml/badge.svg)](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/main.yml)
+# 📄 Azure DevOps Sprint Daily Report Mailer
+[![CD Workflow](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/cd.yml/badge.svg)](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/cd.yml)
+[![CI Workflow](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/ci.yml/badge.svg)](https://github.com/jpmoura/azure-devops-sprint-daily-report/actions/workflows/ci.yml)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=bugs)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=code_smells)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_azure-devops-sprint-daily-report&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=jpmoura_azure-devops-sprint-daily-report)
