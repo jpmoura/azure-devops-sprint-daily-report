@@ -69,12 +69,20 @@ jobs:
       - name: Configure AWS Credentials
         run: npx sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Deploy Develop
+      - name: Deploy Development
         if: github.ref == 'refs/heads/develop'
-        run : |
-          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage dev --org jpmoura --app daily-report-sender --verbose
+        uses: serverless/github-action@master
+        with:
+          args: deploy --region ${{ secrets.AWS_REGION }} --stage dev --org jpmoura --app daily-report-sender --use-local-credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Deploy Production
         if: github.ref == 'refs/heads/master'
-        run : |
-          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage prod --org jpmoura --app daily-report-sender --verbose
+        uses: serverless/github-action@master
+        with:
+          args: deploy --region ${{ secrets.AWS_REGION }} --stage prod --org jpmoura --app daily-report-sender --use-local-credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
