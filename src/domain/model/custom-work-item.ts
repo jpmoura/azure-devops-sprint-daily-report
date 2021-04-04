@@ -21,7 +21,17 @@ export default class CustomWorkItem {
 
   children?: Array<CustomWorkItem>;
 
-  constructor(id: number, title: string, type: string, state: string, url: string, storyPoints?: number, originalEstimate?: number, remainingWork?: number, completedWork?: number) {
+  constructor(
+    id: number,
+    title: string,
+    type: string,
+    state: string,
+    url: string,
+    storyPoints?: number,
+    originalEstimate?: number,
+    remainingWork?: number,
+    completedWork?: number,
+  ) {
     this.id = id;
     this.title = title;
     this.type = type;

@@ -1,0 +1,22 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:sa-east-1: 379949034712:local-report:b7dad153-717c-4467-be9d-4eabc38b1c74",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "bc6de0a3-ffc8-5c7c-808a-b8933c49f763",
+        "TopicArn": "arn:aws:sns:sa-east-1:379949034712:local-diploma-document",
+        "Subject": null,
+        "Message": "{\"id\":\"a-random-uuid\",\"email\":{\"authentication\":{\"user\":\"user@provider.com\",\"password\":\"secret\"},\"server\":{\"host\":\"smtp.provider.com\",\"port\":587},\"recipients\":[\"business-owner@company.com\",\"product-owner@company.com\"],\"carbonCopyRecipients\":[\"tech-lead@devteam.com\",\"a-dev@devteam.com\",\"another-dev@devteam.com\"]},\"azureDevOps\":{\"authentication\":{\"pat\":\"a-personal-access-token-with-privileges-to-read-data-from-azure\",\"user\":\"dev-with-access-a-azure-devops@devteam.com\",\"password\":\"secret\"},\"organization\":\"Company\",\"project\":\"Super Secret App\",\"team\":\"Super Secret App Team\",\"hasCustomBurndown\":true},\"isActive\":true}",
+        "Timestamp": "2020-11-19T19:02:25.741Z",
+        "SignatureVersion": "1",
+        "Signature": "ji11ey/plgNfsf1c6nvSRsALJR8PkJ59uJGELM4idOV2+1qO+JVupppvP6PHDmUxBRqT4I+J92qkaNp6Srfs1padbOk5MgtgU1AiBX0VvFFHO3JHbcIMCSY1WbINrNHCiIzwqkr/+1A9U0ZsuQXJtU8RuuZOXhqR+Tl0taz2ryv9DAbB3APrjP9HhCHQCIDX6xU0/BsW3JMM/ucHSEMuo7xCqJlk0ihCtMRJQPkxSAhuk2yZ3360LzEFArBaLzFI8kJvyUO8ueyYDjp5N+1n9MtncWT7zSqYRZb4FDOHwbfF8OHQA81UOs2BMYMRVqlvJkxizRc9BKIhNZm/65kJUA==",
+        "SigningCertUrl": "https://sns.sa-east-1.amazonaws.com/SimpleNotificationService-010a507c1833636cd94bdb98bd93083a.pem",
+        "UnsubscribeUrl": "https://sns.sa-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:sa-east-1:379949034712:local-report:b7dad153-717c-4467-be9d-4eabc38b1c74",
+        "MessageAttributes": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+@startuml Big Picture
+
+' AWS style
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/master/dist
+!includeurl AWSPuml/AWSCommon.puml
+
+' Components
+!includeurl AWSPuml/Compute/Lambda.puml
+!includeurl AWSPuml/Database/DynamoDB.puml
+!includeurl AWSPuml/ApplicationIntegration/SNS.puml
+!includeurl AWSPuml/ApplicationIntegration/EventBridge.puml
+!includeurl AWSPuml/General/Users.puml
+
+left to right direction
+
+EventBridge(PipelineTrigger, "Schedule Event", "business days ay 10:30PM UTC")
+Lambda(ConsumeLambda, "Consume", "build and send report")
+Lambda(ProduceLambda, "Produce", "produces report request messages")
+DynamoDB(SquadConfigurationDb, "Squad Configuration", "one entry per squad")
+SNS(DailyReportTopic, "Daily Report Sender Topic", "message hub")
+Users(Stakeholders, "Report Recipients", "project stakeholders")
+
+PipelineTrigger --> ProduceLambda : Trigger
+ProduceLambda --> SquadConfigurationDb : Scan all entries
+ProduceLambda --> DailyReportTopic : Publish report request message for each entry
+DailyReportTopic --> ConsumeLambda : Consume report request messages
+ConsumeLambda --> Stakeholders : Send report email
+
+@enduml

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "a-random-uuid",
+    "email": {
+      "authentication": {
+        "user": "user@provider.com",
+        "password": "secret"
+      },
+      "server": {
+        "host": "smtp.provider.com",
+        "port": 587
+      },
+      "recipients": [
+        "business-owner@company.com",
+        "product-owner@company.com"
+      ],
+      "carbonCopyRecipients": [
+        "tech-lead@devteam.com",
+        "a-dev@devteam.com",
+        "another-dev@devteam.com"
+      ]
+    },
+    "azureDevOps": {
+      "authentication": {
+        "pat": "a-personal-access-token-with-privileges-to-read-data-from-azure",
+        "user": "dev-with-access-a-azure-devops@devteam.com",
+        "password": "secret"
+      },
+      "organization": "Company",
+      "project": "Super Secret App",
+      "team": "Super Secret App Team",
+      "hasCustomBurndown": true
+    },
+    "isActive": true
+  }
+]
