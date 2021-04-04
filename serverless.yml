@@ -61,16 +61,18 @@ provider:
             - xray:PutTraceSegments
             - xray:PutTelemetryRecords
           Resource:
-            - "Fn::GetAtt": [ SquadConfigurationTable, Arn ]
+            - !Ref SquadConfigurationTable
         - Effect: Allow
           Action:
+            - sns:Publish
             - sns:Subscribe
-          Resource: ${self:custom.topicArn}
+          Resource:
+            - !Ref ReportTopic
         - Effect: Allow
           Action:
             - sqs:SendMessage
           Resource:
-            - "Fn::GetAtt": [ ReportDLQ, Arn ]
+            - !Ref ReportDLQ
 
 functions:
   Produce:
