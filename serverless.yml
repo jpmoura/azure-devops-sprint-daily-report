@@ -33,9 +33,9 @@ custom:
     - Fn::Join:
       - ':'
       - - 'arn:aws:sns'
-      - Ref: 'AWS::Region'
-      - Ref: 'AWS::AccountId'
-      - ${env:SNS_SQS_PREFIX}
+        - Ref: 'AWS::Region'
+        - Ref: 'AWS::AccountId'
+        - ${env:SNS_SQS_PREFIX}
 
 plugins:
   - serverless-dotenv-plugin
