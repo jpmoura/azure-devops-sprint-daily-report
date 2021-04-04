@@ -1,9 +1,5 @@
 service: daily-report-sender
 
-# app and org for use with dashboard.serverless.com
-app: daily-report-sender
-org: jpmoura
-
 frameworkVersion: "2"
 
 package:
