@@ -29,7 +29,13 @@ custom:
   prune:
     automatic: true
     number: 2
-  topicArn: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${env:SNS_SQS_PREFIX}
+  topicArn:
+    - Fn::Join:
+      - ':'
+      - - 'arn:aws:sns'
+      - Ref: 'AWS::Region'
+      - Ref: 'AWS::AccountId'
+      - ${env:SNS_SQS_PREFIX}
 
 plugins:
   - serverless-dotenv-plugin
@@ -87,7 +93,7 @@ functions:
     timeout: 60
     events:
       - sns:
-          arn: ${self:custom.topicArn}
+          arn: !Ref ReportTopic
           topicName: ${env:SNS_SQS_PREFIX}
           redrivePolicy:
             deadLetterTargetRef: ReportDLQ
