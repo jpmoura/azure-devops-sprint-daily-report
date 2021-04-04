@@ -1,70 +1,25 @@
-name: Main Workflow
+name: CD Workflow
 
 on:
   push:
     branches:
       - main
       - develop
-  pull_request:
-    branches:
-      - main
-      - develop
+    paths:
+      - ".github/workflows/cd.yml"
+      - "src/**"
+      - "serverless.yml"
+      - ".env.dev"
+      - ".env.prod"
 
 jobs:
-  sonarcloud:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14]
-    steps:
-      - name: "Checkout repository on branch ${{ github.ref }}"
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-          fetch-depth: 0
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache packages
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install packages
-        run: yarn
-
-      - name: Run tests
-        shell: bash
-        run: |
-          yarn test:ci
-
-      - name: Run TypeScript compiler
-        run: |
-          npx tsc
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   deploy:
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14]
     steps:
-      - name: "Checkout repository on branch ${{ github.ref }}"
+      - name: "Checkout ${{ github.ref }} branch"
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
@@ -121,9 +76,9 @@ jobs:
       - name: Deploy Develop
         if: github.ref == 'refs/heads/develop'
         run : |
-          npx serverless deploy --region ${{ secrets.AWS_REGION }} --stage dev
+          npx serverless deploy --region ${{ secrets.AWS_REGION }} --stage dev --org jpmoura --app daily-report-sender --use-local-credentials
 
       - name: Deploy Production
         if: github.ref == 'refs/heads/master'
         run : |
-          npx serverless deploy --region ${{ secrets.AWS_REGION }} --stage prod
+          npx serverless deploy --region ${{ secrets.AWS_REGION }} --stage prod --org jpmoura --app daily-report-sender --use-local-credentials
