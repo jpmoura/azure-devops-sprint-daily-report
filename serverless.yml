@@ -1,4 +1,4 @@
-service: daily-report-sender
+service: daily-report-mailer
 
 frameworkVersion: "2"
 
@@ -51,7 +51,7 @@ provider:
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
   deploymentBucket:
-    name: daily-report-sender-service-service-${opt:stage, 'local'}
+    name: daily-report-mailer-service-${opt:stage, 'local'}
     serverSideEncryption: AES256
   tracing:
     lambda: true
