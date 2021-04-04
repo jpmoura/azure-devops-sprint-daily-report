@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="322px" preserveAspectRatio="none" style="width:1607px;height:322px;" version="1.1" viewBox="0 0 1607 322" width="1607px" zoomAndPan="magnify"><defs><filter height="300%" id="f1pg97jr8qdu1t" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[14aba2fab8d37c20a22556edc20367c9]
+entity PipelineTrigger--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="200" x="7" y="91"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="81" x="66.5" y="113.457">«EventBridge»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="120" x="47" y="132.7031">Schedule Event</text><image height="64" width="64" x="75" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADcUlEQVR4Xu2ZvWocMRSF/cB5g7xBnsB1mlRpkzpFunSBdAJPcBFYCGTBxYJhctBhhKKrnyPNesU6OxyWRZ7R3O/+SdbeuTf3V607O3RdugHM1g1gtv57gOXtezt4SQ0CwO7j1x/Pf56g08/D70/fZpGMADy++wi7V3+FL8CYwtANACtpdPA6Pp++P2AEn/b+l1Y3wOHDF9iK/EnGEQGMIzj2kRdVNwCdbQ0lGD6TcdwJtoow4Z7cOzMA8ioZx50sksq1J/e6AWDimvM0wX7df7aPwMEVMfeyDyrqBqBHUcdxEOh+DA4kA0xffROzf1LUDeA2cxl6VDNduObyShSjh2nBj0m65hkBcJ4h2M1rzP1UqJN4VbFZmtUgAEVvwW4Whu2topZtbcEnosGArLmWYLULIChY0BX9IFoM/hDDsNg3i/s8AG5HLcLo7IOcsNlhzwbgolq0f6qIhtr0Y1Qh+0gsFYD9wY7HCh0WDCXZSS4EUFq/YoVKqFy2WTGF7DibtQVLJAGINYqX8ZVwqvU9BnmD7S0cjzdFuFl5oxMBSi+OFfKnshqUHLFsG/LVV3MIYz3gVBtAsczJFczEyPYWOIiLYwBout8pAMpmq6uH1iekm8ipTNgAqDgsqJQYJYm0YkhrAKJlA/sIxTgxdWsAimWlJliXaJzSPIoAomV8R92XWYneYQpUbHi9AE5+h8KZ6BIp5F5BEbtrb6MU152D30hyV2MNFW2i6gsZpU/YBmAokyveeFGiw84e0g4AvBWvDzuW07+nuUrKipZ1FVUbgK5NWkF2cHg7nejoD+4rjojVAGCXtLmYHQ8Orl+Ka0XrXROAiZF9JRMpeVMo9JJIWK/gLkkAtubobD3QQXp7EdUAcIWD/4P2D2tWYr8S1Qagz579WcPiz5PZJSyVKKVf6WoDuK2vJdeePA6NctlOc4dhJADn3Xb0B9FMgNWUb6+SfsUI29uaUgFisQBsZet63I4+4RH4JTiluURYjQA4bT9TER+PzQ1IvXMOAoRuyLIuyT7oyq2Zc/Z2tkEAt3XD+pVtU8xAmy1LbnVvahxg8cdpJ/OzaawsAD09H2BYpXWAvdWC1TUBwEWnuQwRSJhXa393ngPA9KPF3FPxe28LcrMAqIP/qZMAiEm2YJqaCUD15kyi+QA7dQOYrRvAbN0AZusvp9H/NcoxlrAAAAAASUVORK5CYII=" y="136.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="180" x="17" y="212.6758">[business days ay 10:30PM UTC]</text><!--MD5=[9291bc53e0495c5a82597591cc1c9bae]
+entity ConsumeLambda--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="143" x="1135" y="176"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="61" x="1176" y="198.457">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="74" x="1169.5" y="217.7031">Consume</text><image height="64" width="64" x="1174.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="221.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="123" x="1145" y="297.6758">[build and send report]</text><!--MD5=[013892d13ff6f09db18d39dfff9f1999]
+entity ProduceLambda--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="216" x="308" y="91"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="61" x="385.5" y="113.457">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="65" x="383.5" y="132.7031">Produce</text><image height="64" width="64" x="384" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="136.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="196" x="318" y="212.6758">[produces report request messages]</text><!--MD5=[613ad5b2f39748a7688f53ad943efc70]
+entity SquadConfigurationDb--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="179" x="735.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="78" x="786" y="29.457">«DynamoDB»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="159" x="745.5" y="48.7031">Squad Configuration</text><image height="64" width="64" x="793" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAENElEQVR4Xu2aMY8TMRCF+cnbUrikSUmzHdVVdGkoKWhT0J5AFEggkJAogiiQkMKTP3Y059lsbF+U1Um7ejol3rH93ng8nt3cs/Ti05PGs9j0tLAJWBubgLWxCVgbm4AJw/MP5xCNr4h+AZ7f7uVnYXz15e71dw+1qD3aXxE9AiAhcvs3P+4//j7++nu6dH399ufw/ih79FxRRpsAJhYPETJyEqCvUiKKb9/91F2gz2pRuzfWpRYtThy8Dw0CxF4Tm7/FQyy1Dnb3HDCQpUfsEmesQa0A2ENdflUk1E8sGzbJMmLHGtQKEPC9ZFTyBrCv2SfyS/2whioBGleLfsph0zqH7MXslPexukfoLpvkFgLkSIIn2swC99ORr7NAoaaoH9nQJgAq5BDmjsZFR8hpuy8Ym8IOtAmwUNai+6QeQbt3/yyGKTf0xU9qFaBp9EGBiwzI6Svpn6MXEGkX3a92RuuLn9QhAAeL3/IxjIbTovuB2RQLWIkeAZyytKdcCMn3dvRyHle6n/ghID2i8Tn0CDAfw8x7zlAknzgm7ZL6f8keXvW5rkoAIFrGXHKyAufg3R/verB6QMawXx68QK2AIUcOE0DLnB0tcf8pr4AHp3i0p5HjjPArbBbQIMBqIZjJx2qZzaRqFBtP3ZRHcp59RzKtFZBcLSQn+eRDjWCZNHZME78Y2QX72PEiqgQMD2shZhXXw1TGeDGRIhGlW3FY/eUc0N/ibiXaBBynWsiAwc49T8a+xF4R3JF9obwSbQLQAEsvIEryfeNZey32qVWAhb4+yKPj3INVFMM+LsYkzxJX3exTq4BDfhZjblNCTc8OvnPlEC73J6ANeC32qUOAuXa5FjpNOx6udgJYi9jHpNSBHgGxFmIH+3LokOvWNCVf2/rUDpYMOEYegx4BcLJNCbNZ0MuSb8Fed2NubUWVAGC8x/xKKxoUGKbqgwM4sjdtsW89agUMrpSw+AHR2LrYAYwSsfc7m1sLI9SgQYAVc1z3+QXbbC0E7AC2jgV7a4nT1aNWQDpfC1kmpRwinw7Tipmlsb/Pr/RQdaMQMrfZdkz5VaEYz2ZSKiIOWi5Lo7Zi6cwB14o2ARbEHulhLbSfXpiaMGNvow1ufeJ0TWgTwEUKMvb22cN2vD/CgNSSkVYQYE49XqqFxpzjYY+AXX56tDKEoW4tINZCJ/fjBSE0ToUQ4cQ+8Y8NiN/lN74rCDCP4s7igWbhkqVftLTKJkYABQ/tKdRCBkupkMaeLmAFAaRRwnesqIUMccx0SwEA3niURNQHJJGIbnSQpTyrZUa24LJ3I8x4nF4PHxt/bZhFrYA0abBMSkVQxPcsMBjzyW2b/qYPNAbm21/pZ9bHs0+tAoBFwv7SU6VddlZY7MVh+9AjAPgI2T2tfzWYhQ/6AtH4iriagLWwCVgbm4C1sQlYG5uAtfEPOfDxdZNBvAMAAAAASUVORK5CYII=" y="52.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="115" x="767.5" y="128.6758">[one entry per squad]</text><!--MD5=[7a3cdbec9e76e8d805f5009e68137de6]
+entity DailyReportTopic--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="220" x="715" y="176"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="39" x="805.5" y="198.457">«SNS»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="200" x="725" y="217.7031">Daily Report Sender Topic</text><image height="64" width="64" x="793" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADsElEQVR4Xu1Zu4ocMRC8H/Uf+A/uDxw4vtjJRU7t2IEzZwYHBoHXbLAwYPDCBgeGuWIKNTq1Hi3NcvKChmKZ0bOr1N3Szty5tw83jTtddFuYBEZjEhiNSWA0JoHRmAQUDvcfTg+fl8cvfz59E+ARhajS7XfiagSO7z7C0Kffy1q80ADN0FiP0IcrEIC6od24P3/9IaoTuEdh1AzlerRW7CIAC8Qm3MDKqpOgQUgYNztXo58AFKURl++/OoxAF3RE939/L1XaBfQQwHyUEHPvdAOsBhA+ghXjxMiqmYBYj5mMc1iAobggcmEWy/htBMR6+I+u3QNILt6IWeifllnaCFAky7gWMO3CDwGqLrEEDizXvSI0EKBImFJX9YFy4FecJ/QZEqh6kZUAtFl3Z4wItBsD/nzzPvIZ8SjdK4KVAF0/zBj7IQSc9xlqpD2qABMB5Mo17zyYGzPx8AMJCTkCMSh1L/eSAMdBRxKw7y0mApwpmfJhpQiWu9AAzXTfiACBxxzhJOoExPt1FQSmiVCOYlNvrgmXRTZs7X5JAq2oE6CVSQmFAEzh0Y12EzzDSYYZRoDTJD1SIq96JdPXaxCA3TQxdz5hvoOfQO8wiBnHclzV8rsMATzKBmcJ5RIBej/1441OzGyTS1ASP5q5yxAQlzMm0xIBikfhD/4UpLVkmCZzFKt0F0ITYFDJMU4edV9BlgCGiDrLgqCQ4IKwPLc4TF90xQgcTZeEklO15AISPQRkPqlNBnooP6qEtkBGi0quQ8CZXcj5rVpOMq64ewgKLnTc9hPL8bFEwBLEgkiqsvcTmoAUhld/EDtDGhWE+105+QiSBFzwPwEqlK13VQLOa1kd6BD8BSGZsvwuT6AJdQKhtGVQNulS5fxKBHQ6yqGPQLVZGXUCzuxFVyHQuiAmAgzKQgoiSADWM+5bCfDgxECyeCxhIuD8ZMnzgkB2ItLQDSKEBLho7Mubql6ElQAjoZwZ6Wn4LbQJIUHMDLZ6gQ5+0yzrRVgJOC9SuN1GoCm6PAcSePKHiFBybu0WR2og4LzGlnEtWLbX1PT7iIA9d7cRcF42y9BNIIdle0EP+Y1pwHUQOPi3sHZft4A+E15GjZoJEOK+FpEKWLZ//RQCQ523rzgosYQv0UnA+X/D67YUHTSO/gPHass2OfQTcC+NuGxvVqpOhQaMXfbav4a7CBDQT2jQpvP2nuvkv/Cd/tuPfCGOt/uZNQLz4HJzH7pHYRIYjUlgNCaB0ZgERmMSGI1nc+Ac5v31pRYAAAAASUVORK5CYII=" y="221.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="82" x="784" y="297.6758">[message hub]</text><!--MD5=[73726ad79af5ff22e5f54523a00d822a]
+entity Stakeholders--><rect fill="#FFFFFF" filter="url(#f1pg97jr8qdu1t)" height="134.3125" style="stroke:#FF9900;stroke-width:1.5;" width="157" x="1438" y="176"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="1493.5" y="198.457">«Users»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="137" x="1448" y="217.7031">Report Recipients</text><image height="64" width="64" x="1484.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAFAUlEQVR4XtVZsY4UMQy9X9uaYltorkNU2yBRUVDQIRrKbegQDRXFFjRUK1HQrYREe0L0Ax8QHuOdd15nxnZmdu/gKTrdTRLHz3YcJ3dV/nNc2Q8Rul+/pdmOZZgtNksAot9/+Lh59mL96LG06ydPX73ZHr59t0NbgOkQAlEUiyWwUJ5JisDu02eIXj14WDd83759ZyfkgImOWCxqJ4whJgB7UK5YHQvjJ0zF789fvrbTImAKp0MUZIpYLMHvWNpOqxAQgBkck+y/fOV6TX6AorQIhOguiVV6xvTW8AhAlugHcVOCbn785JjkfsAwaj8V61hOOGCM7TuFR4Dm912JxWQY7Gr7xiDmDwnDpRkneAQkTLHSlJ0I2Q+htYryKqbYvlPAt+IE3y4eAVErXKkM1spQpVqZPZOh6hGQ+ZkMI5kKmkE/23cKDJDA8MNSkLGgRyAfGAzrS3jAt6BHgGqFds34mpDBoV2YrHyqHgGK8G3Aky4TFUWlF388Tzo/WXkEipIyZQZWGU5SN8AwmeIcLyTp266EBBiyIgvriZb4KXWYdDmqjEIXV7oihFjIYZGS2VQeAWgP6VyJQq/74lF/JD0rYgxaRTbIrMXiTyjg78BJArogEVlmydHvdb1koEvDevrod/zu7JYRAvCaKRUlcuBohCb+hKnwE7aBujqW9DaQ75iInzAhv0tMimnRhe8QIrWtiMUS8t04CiqNhpMlgEGcBomhRQlRtPTxvenvPcaijDGM9BOLBqRJ2hVT1hwsAdoeo/3gq7FX1fVUg9i89gKoQZvWSemEAAN0lKsPJr7VsPkgDZRgQvyChekTP6ZHoePCzL0lwIy5Thy9BjqfgskoeclpJNnKYUq9WwKUno97Aa8NiJ8wPHhTWUWFfg0upAvsI4FuOB03uXqG0IYJtReQQ/7wJiSQ1uqAOxIguVbzM/SbJs6bVcb0PBLIX740uuF6FZaWBrMdzolMR0cCokerOJarrTuytNTqBhJFNNlfAqSlN0cGTLvJ6NdgMLRuZTKXYDkhMFUzT4FX4VYrFuW91m1g7t/WA3LOh000zt/laxgCEFivMto8D+Sb7BaG0AwP7IfXJAkhXbdlmiUQ1jCmCQEq0RoGRWVSId9KgGfIMQtBCrTJt0O/a2dnw1Jd7Q997Z1v9LmtRlvBAmTfkkyYglrTRo2lBGA5cUK+LtDVR3KKg6UEiormTBF+M7xmr2YdfzXOQKCoa9B19d6vsTt9jLDds3AGArC6vs2IK2BdZm5QwgCd6Nb9nSZ0VwaLCIjqrWcI23r69pPHfAI6HlZ98EAbfNS3R6Muunb9G4T2hh91IeYQgM305RABs+vfVzhAThUEybb/151cjvWArn9N0TRmb4lmAp26X0so2xFpdKf/z5t6+fHRRkBrv2l/dxkFdjldkUnEBg0EtPbzrDUFI9l2u2ggwLhvXSMDzaGpvsgS2A+FZ75kaIU+pKVYzCBFoFP/8c6LngFtJts3gRQBXlyanDsPre9rMQGa/3LBo9ENd4ykE2ICrN2XpPwmsLLKnNAxgXlvXkvAC0PmeA4I0KGXSJ0O+HoVWi0gwLSQ3FLnQv7JLCCQF3ReHNLPXgEB84p0Z+A2CBN3QEB2cDKjnRHM3eE+DghwM9mOy0MIhMkjIHBfHijnJSCX1ztuyaMgIND6ZHn2ttQDYol7bGH9EhAofUK4x2a1qRAT+MfxB/uQ8a7L+FOtAAAAAElFTkSuQmCC" y="221.2188"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="117" x="1458" y="297.6758">[project stakeholders]</text><!--MD5=[475698ef8b2fd6b2a30047997d98444e]
+link PipelineTrigger to ProduceLambda--><path d="M207.25,158 C237.76,158 271.56,158 302.87,158 " fill="none" id="PipelineTrigger-to-ProduceLambda" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="307.88,158,298.88,154,302.88,158,298.88,162,307.88,158" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="238" y="154.457">Trigger</text><!--MD5=[078d20e1c3c9d4c496656748e743135d]
+link ProduceLambda to SquadConfigurationDb--><path d="M524.2,135.88 C588.23,122.66 668.78,106.03 730.27,93.35 " fill="none" id="ProduceLambda-to-SquadConfigurationDb" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="735.41,92.28,725.786,90.1873,730.5138,93.2935,727.4076,98.0213,735.41,92.28" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="85" x="577" y="100.457">Scan all entries</text><!--MD5=[d49ef6e7f0e759006c8162195726f848]
+link ProduceLambda to DailyReportTopic--><path d="M524.2,180.39 C581.24,192.3 651.4,206.95 709.5,219.09 " fill="none" id="ProduceLambda-to-DailyReportTopic" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="714.73,220.18,706.7276,214.4387,709.8338,219.1665,705.106,222.2727,714.73,220.18" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="122" x="557" y="169.457">Publish report request</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="555" y="184.5508">message for each entry</text><!--MD5=[0db9e972d66246aa51e453330e8ef118]
+link DailyReportTopic to ConsumeLambda--><path d="M935,243 C997.27,243 1073.8,243 1129.55,243 " fill="none" id="DailyReportTopic-to-ConsumeLambda" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1134.88,243,1125.88,239,1129.88,243,1125.88,247,1134.88,243" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="135" x="966" y="224.457">Consume report request</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="1005" y="239.5508">messages</text><!--MD5=[ce372a213e8c1b9b202293590909839a]
+link ConsumeLambda to Stakeholders--><path d="M1278.16,243 C1324.17,243 1384.38,243 1432.65,243 " fill="none" id="ConsumeLambda-to-Stakeholders" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1437.87,243,1428.87,239,1432.87,243,1428.87,247,1437.87,243" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="98" x="1309" y="239.457">Send report email</text><!--MD5=[e9e6509388ae90b3097410e9b625a64d]
+@startuml Big Picture
+
+' AWS style
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/master/dist
+!includeurl AWSPuml/AWSCommon.puml
+
+' Components
+!includeurl AWSPuml/Compute/Lambda.puml
+!includeurl AWSPuml/Database/DynamoDB.puml
+!includeurl AWSPuml/ApplicationIntegration/SNS.puml
+!includeurl AWSPuml/ApplicationIntegration/EventBridge.puml
+!includeurl AWSPuml/General/Users.puml
+
+left to right direction
+
+EventBridge(PipelineTrigger, "Schedule Event", "business days ay 10:30PM UTC")
+Lambda(ConsumeLambda, "Consume", "build and send report")
+Lambda(ProduceLambda, "Produce", "produces report request messages")
+DynamoDB(SquadConfigurationDb, "Squad Configuration", "one entry per squad")
+SNS(DailyReportTopic, "Daily Report Sender Topic", "message hub")
+Users(Stakeholders, "Report Recipients", "project stakeholders")
+
+PipelineTrigger - -> ProduceLambda : Trigger
+ProduceLambda - -> SquadConfigurationDb : Scan all entries
+ProduceLambda - -> DailyReportTopic : Publish report request message for each entry
+DailyReportTopic - -> ConsumeLambda : Consume report request messages
+ConsumeLambda - -> Stakeholders : Send report email
+
+@enduml
+
+@startuml Big Picture
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+
+
+
+
+
+
+
+
+
+sprite $Lambda [64x64/16z] {
+xPQ7QWGn44CrFV__m-bcPHy63-b5ARTDw1qZXhtxLlhNloecjVsAIT7t-vNkaBw_fhDuap-XVVzycc_o1xJlPmcoxNyBW2BhMQDF1D3fZzO0W7Nyhl8e1U82
+g8R_Tl3U0hXjNW7LzmS3UDVDWtyxW7K1t1S0QG4aa6y1KC2cvcKB8262cWPldJrY28TDpKj89xuA1D1SP0P_jHRQ0CFK1k3uKLe626WZVdmQlBL92Tcw01pF
+0ArDkdOc8Gs0qLawD4HZamPiEIG0Xnt6yzTL1X0HZOETGOVKF0S0-C7Eed5pywegu2VnkHuEvTRFcHpAntl_cYaBre6VSkYGkBP-pgIX4y21dp8DiPdBtf-0
+NwzjjGucNcKxluFaQo_vti6BQwrmoxtle7_zwm4
+}
+
+skinparam rectangle<<Lambda>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<Lambda>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $DynamoDB [64x64/16z] {
+xPP7bkiu40IpOChb_Uyx3P8DIEE0xtQALHl5AqaCcFm3VFZ0RtvApGYtWSVz-pbCrofObAQHFBQr091IMrVLtkhu5TKETHEWghzzVXya1riTQF7-EiOBkK5W
+ZxnqmQBnVySxAlCTDfHwqyhUb_ZxU4ZoeS5tFiIIV1klyrT8vcu-K3IID_VuzUKsxlpc5O3KhkRkyJgU5RxtoLZv-HW_URw9ZQyzcM7QM-jlumr51niVS2Pl
+nlZfTzm4_wyVj_xsvUSap4o1dlyD5T2vNXc03EpvdLdGkUaVqYoIWoZ31lHsXjwuwxyBW38UODuK1AUUs_wPrWe0bDiAb6TwHTtt5_SZ3ZVx_aYTKsSUziyl
+LdLBF-XVkh_kFY8vQ2X3t_ORxUg_gPb_SILreg_-S_MFoWPZig74qW_wzsi1D4z1a1qIZ3DVPly3HtrqBxb7uAxlGUkjhwrnqsz_FQzO40fnEX07ljw7JQm5
+N1IuTFZoj_tBTNmP3NBfLHLr-fl-lJyFiB02C6OaxuwslZW7L__gAPUUIHgEV41d_qCQEideMFvv_rwCpB06oFBt_QCy_PlsMW183pdpv_wnADsJUUhtzjt_
+5whccMJceLzd_vCSB7_NZsl-4x8VznzpvfJJAoJui_UdNe0I_BNx6t_b_aZ-gVlh_lxyv_ZmuIy
+}
+
+skinparam rectangle<<DynamoDB>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<DynamoDB>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $SNS [64x64/16z] {
+xPPNajim40NVvE3xtzSYQmb39GBEUNk3OcFY1_hVv9rtAjmUUDGto6cC0Lj-dUryM6eU4QxdY_XoEnXWhnwKCy1VceC2ylBT551zYLqCkitL_VWdRBNN8RNy
+K020QwjhBp58bkw-8SiFZOc0x2wYJG1Udom27AdJif49ghLV7yxK3T8B6DuRlulmLiGjCRAlT5DLCy-Q_2ubabo7Y3unme1iyhkhUaM2-iG1zSogJ5V0Xx_7
+OSCNZtmGBb_kozMO8anGVPcVX6kt3Hgc3omO_bo_yNq74o10tfxpl16pBy3z11bMTKNJQn8AxzbtS1t_NlG2d-70pD896ID9EW68hkLXrD8d8XwzFC8ddm34
+pCFVvzy1dJTYpZ_BmFl-NI56zNF_3d8plx5Ce_cptyQasNVeV6mHjO_mNxw_0pxy_1g_m5i_j_OeOE_Nna_8x3kz-C54rai4ySa7oFlPzsl62seQc4Bh-Umg
+GdGnOZC27MTTzl2Ppz21JGMw_D2P2JB6l49sdnAyWhQ3B85MBmWSM6-HnKt1fJgL9Rht6A1tzmVipUVlohVSNmOX05WzfllJpxs_xU-F_oRllFCH
+}
+
+skinparam rectangle<<SNS>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<SNS>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $EventBridge [64x64/16z] {
+xPS5ikP028GR6GR- -zztPJRofEk5JSfMlf9e4sY8lVu-_bEFn2wYutQ85400lHcW1ADUPR1x-e2lfI9lwMtJ1M8jKm-iVai_VkbnqYbf8BOuSpFaG34RzaDo
+NLu-PJkXBGDXha2osg8oBmCe04YntDPan6KDMGDEPqFCWD4QeoJvUwq19Jusp2heTiXQWn2VGlgMcxmubUyQ6JlPr0_4MmSszcRKjWnumpI7prXCtnntMFr8
+WrYxIyRRzEjZt3901GYYtIJSljWT7me1akiLystx-A5w1PJA0yQTsCBnrBXamCaqi3gff215l24-SuaZlWmlgAVwX_a_zUzf_nYAoFDUq-PedIGMLcH-IMfC
+Rp4KMcUHt1gEOMmBUlzkk1IN5_JjiWGdtlYuoFqiHQtjE93UcyksQgLklRaKIHvlhEMS2Ocg0IH_D5qoi9Zqa5VcLOnqDO2U9G0WZIe2nY8Br7klJcK5w5As
+NfqJMWSVUZlXdJVdIUv5ZNCshoZJWqq_s_glNqs36DZ2OVcg0EgUlWmG8RFL9bJ4yzbVnL_7Vxu3
+}
+
+skinparam rectangle<<EventBridge>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<EventBridge>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $Users [64x64/16z] {
+hPQ7SaGh28P1hC3__ezxozdAuCcOcNp9Dbsgm4f_33EVRcQugxlR5DeWqznT-xsAvdZWWnBZlTbeJmTWSqm5i8WY2u2ECGr0trj_gwu630fCmEeZH0SgPTZW
+h_LYS0cn0_QAkpfiR_xZLmLcCF-jRsmTM72cDmgBlYczAOv92ONIXn6q5G_v-6WBYokSXPSlUQ3lJTrvF9FzhQaeKMvTD5WuZ449mPVMZbWau_lp0eGowwEs
+EOn3SVYdE4QepX0aLcLYcO3Nt1fJYBWguBmJdmu0RjSBLb1G5VzZZqsV9JUF0xXsNwyjT5RSz4u1NW2qiWmrdOrbNWbWgLBu_z1y2hUffaEk4B3uMrm1Ysqj
+XPe-l5sLH68s350EgTT2aMfueqAHek6qBssH0S1dhwqlp_5U7lVFmNb9rGWV_DoVOUOaeGcqF0pio-VgGCrVcQ_Qqeto47Az2ZAYppfgsVn8Isdb8xTIFN9e
+j-1aN5hxQI90lsdlF34uJxCE26LlQrR9b_n8uITR99iilUIdV5EkZQryaM_UzYDA7KZsAr194RdaBSdNx2iDe2JvgoPAZKWuh311fKOAxPb0JUaVT8myoZKM
+DDCv8tPqiL1H1op0QXY-z1ju081s4Qd307ZdtqWx4ZvEDJG7OACjnuMlDWrNG0Vm1A3jKHbzZ5xv_zLcE4e2wsPQlYzEYm_4jT0M2LF_LdpnZxlq4nDOFwh_
+kOmhGjrcYW5ohpvS6syjq1tzeCacq6xD9-ypxBSEjACcoxVNV8FDx6-l-VVa0Dr7cQVcVPRbV3qZDtRcGVZnCXnPC3g13VCcBtI4OPtO_xsyZoFyplzJzlQ7
+7xClSpw6_ev_0G
+}
+
+skinparam rectangle<<Users>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<Users>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+
+left to right direction
+
+rectangle "==Schedule Event\n<color:#CC2264><$EventBridge></color>\n//<size:12>[business days ay 10:30PM UTC]</size>//" <<EventBridge>> as PipelineTrigger
+rectangle "==Consume\n<color:#D86613><$Lambda></color>\n//<size:12>[build and send report]</size>//" <<Lambda>> as ConsumeLambda
+rectangle "==Produce\n<color:#D86613><$Lambda></color>\n//<size:12>[produces report request messages]</size>//" <<Lambda>> as ProduceLambda
+rectangle "==Squad Configuration\n<color:#3B48CC><$DynamoDB></color>\n//<size:12>[one entry per squad]</size>//" <<DynamoDB>> as SquadConfigurationDb
+rectangle "==Daily Report Sender Topic\n<color:#CC2264><$SNS></color>\n//<size:12>[message hub]</size>//" <<SNS>> as DailyReportTopic
+rectangle "==Report Recipients\n<color:#232F3E><$Users></color>\n//<size:12>[project stakeholders]</size>//" <<Users>> as Stakeholders
+
+PipelineTrigger - -> ProduceLambda : Trigger
+ProduceLambda - -> SquadConfigurationDb : Scan all entries
+ProduceLambda - -> DailyReportTopic : Publish report request message for each entry
+DailyReportTopic - -> ConsumeLambda : Consume report request messages
+ConsumeLambda - -> Stakeholders : Send report email
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 07:25:05 BRT 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: BR
+--></g></svg>

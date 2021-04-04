@@ -1,9 +1,10 @@
+import chromeLambda from 'chrome-aws-lambda';
 import * as AzureDevOps from 'azure-devops-node-api';
 import { TeamContext, TeamProjectReference, WebApiTeam } from 'azure-devops-node-api/interfaces/CoreInterfaces';
 import { TeamSettingsIteration, TimeFrame } from 'azure-devops-node-api/interfaces/WorkInterfaces';
 import { WorkItemLink, WorkItemReference } from 'azure-devops-node-api/interfaces/WorkItemTrackingInterfaces';
 import { Logger } from 'tslog';
-import puppeteer from 'puppeteer';
+import axios, { AxiosInstance } from 'axios';
 import CustomWorkItem from '../../domain/model/custom-work-item';
 
 export default class AzureDevOpsRepository {
@@ -11,20 +12,27 @@ export default class AzureDevOpsRepository {
 
   private readonly organization: string;
 
+  private readonly user?: string;
+
+  private readonly password?: string;
+
+  private readonly client: AxiosInstance;
+
   private readonly logger = new Logger({ name: 'AzureDevOpsRepository' });
 
-  constructor(pat?: string, organization?: string) {
-    if (!organization) {
-      throw new Error('Organization URL not set!');
-    }
-
-    if (!pat) {
-      throw new Error('PAT not set!');
-    }
-
+  constructor(pat: string, organization: string, user?: string, password?: string) {
     const authHandler = AzureDevOps.getPersonalAccessTokenHandler(pat);
     this.connection = new AzureDevOps.WebApi(`https://dev.azure.com/${organization}`, authHandler);
     this.organization = organization;
+    this.user = user;
+    this.password = password;
+    this.client = axios.create({
+      auth: {
+        password: pat,
+        username: '',
+      },
+      baseURL: 'https://dev.azure.com/',
+    });
   }
 
   private async getProject(name: string): Promise<TeamProjectReference | undefined> {
@@ -151,28 +159,20 @@ export default class AzureDevOpsRepository {
     return iterations?.find((iteration) => iteration.attributes?.timeFrame === TimeFrame.Current);
   }
 
-  async getSprintBacklog(projectName: string, teamName: string, sprint: TeamSettingsIteration): Promise<Array<CustomWorkItem>> {
+  async getIterationBacklog(
+    projectName: string,
+    teamName: string,
+    sprint: TeamSettingsIteration,
+  ): Promise<Array<CustomWorkItem>> {
     if (!sprint || !sprint?.id) {
       this.logger.warn('There\'s no current active iteration therefore it is not necessary send a report');
       return [];
     }
 
-    if (!projectName) {
-      throw new Error('Project name not set!');
-    }
-
-    if (!teamName) {
-      throw new Error('Team name not set!');
-    }
-
     const project = await this.getProject(projectName);
 
-    if (!project) {
-      throw new Error(`Project with name ${projectName} not found!`);
-    }
-
-    if (!project.id) {
-      throw new Error(`Project with name ${projectName} does not have an ID`);
+    if (!project || !project.id) {
+      throw new Error(`Project with name ${projectName} not found or does not has an ID.\nProject: ${JSON.stringify(project)}`);
     }
 
     const team = await this.getTeam(project.id, teamName);
@@ -182,21 +182,28 @@ export default class AzureDevOpsRepository {
     }
 
     const teamContext = AzureDevOpsRepository.buildTeamContext(project, team);
+
     return this.getCustomWorkItems(teamContext, sprint.id);
   }
 
-  async getCustomSprintBurndown(projectName: string, teamName: string, sprint: TeamSettingsIteration): Promise<string> {
-    const user = process.env.DEVOPS_USER;
-    const password = process.env.DEVOPS_PASSWORD;
-
-    if (!user || !password) {
-      this.logger.error('DevOps credentials not set!', { user, password });
-      return '';
+  private async getCustomIterationBurndown(
+    project: string,
+    team: string,
+    sprint: TeamSettingsIteration,
+  ): Promise<string> {
+    if (!this.user || !this.password) {
+      throw Error(`Azure DevOps Credentials not set!\nUser: ${this.user}\nPassword: ${this.password}`);
     }
 
-    const url = `https://dev.azure.com/${this.organization}/${projectName}/_sprints/analytics/${teamName}/${sprint?.path}?fullScreen=true`;
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'], headless: true });
-    let buffer: any;
+    const url = `https://dev.azure.com/${this.organization}/${project}/_sprints/analytics/${team}/${sprint?.path}?fullScreen=true`;
+    const browser = await chromeLambda.puppeteer.launch({
+      args: chromeLambda.args,
+      headless: true,
+      executablePath: await chromeLambda.executablePath,
+      ignoreHTTPSErrors: true,
+      dumpio: true,
+    });
+    let screenshot: string | void | Buffer | undefined;
 
     try {
       const page = await browser.newPage();
@@ -205,15 +212,15 @@ export default class AzureDevOpsRepository {
         width: 1200,
       });
       await page.goto(url, { waitUntil: 'networkidle0' });
-      await page.type('#i0116', user);
+      await page.type('#i0116', this.user);
       await page.click('[type=submit]');
       await page.waitForTimeout(1500);
-      await page.type('#i0118', password);
+      await page.type('#i0118', this.password);
       await page.click('[type=submit]');
       await page.waitForTimeout(1500);
       await page.click('#idBtn_Back');
       await page.waitForTimeout(15000);
-      buffer = await page.screenshot(
+      screenshot = await page.screenshot(
         {
           clip: {
             height: 650,
@@ -225,11 +232,41 @@ export default class AzureDevOpsRepository {
       );
     } catch (e) {
       this.logger.error('Error while getting burndown', e);
-      buffer = undefined;
+      screenshot = undefined;
     } finally {
       browser.close();
     }
 
-    return buffer.toString('base64');
+    const screenshotBuffer: Buffer | undefined = screenshot as Buffer;
+
+    return screenshotBuffer?.toString('base64');
+  }
+
+  private async getDefaultIterationBurndown(
+    project: string,
+    team: string,
+    sprint: TeamSettingsIteration,
+  ): Promise<string> {
+    const chartTitle = `Burndown - ${sprint.name}`;
+    const response = await this.client.get(
+      `${this.organization}/${project}/${team}/_apis/work/iterations/${sprint.id}/chartimages/burndown?width=800&height=800&showDetails=true&title=${chartTitle}&api-version=6.1-preview.1`,
+      {
+        responseType: 'arraybuffer',
+      },
+    );
+    return Buffer.from(response.data, 'binary').toString('base64');
+  }
+
+  async getIterationBurndown(
+    project: string,
+    team: string,
+    sprint: TeamSettingsIteration,
+    isCustomBurndown: boolean,
+  ): Promise<string> {
+    if (isCustomBurndown) {
+      return this.getCustomIterationBurndown(project, team, sprint);
+    }
+
+    return this.getDefaultIterationBurndown(project, team, sprint);
   }
 }

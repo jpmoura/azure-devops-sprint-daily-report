@@ -1,0 +1,119 @@
+service: daily-report-sender
+
+# app and org for use with dashboard.serverless.com
+app: daily-report-sender
+org: jpmoura
+
+frameworkVersion: "2"
+
+package:
+  include:
+    - 'assets/**'
+
+custom:
+  serverless-offline-sns:
+    port: 7001
+    debug: false
+  dynamodb:
+    stages:
+      - local
+      - dev
+      - test
+      - debug
+    start:
+      seed: true
+      migrate: true
+      port: 7000
+      inMemory: true
+    seed:
+      assets:
+        sources:
+          - table: ${env:DYNAMO_TABLE_PREFIX}.SquadConfiguration
+            sources: [./migrations/seeds/squad-configuration.json]
+  prune:
+    automatic: true
+    number: 2
+  topicArn: arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${env:SNS_SQS_PREFIX}
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-deployment-bucket
+  - serverless-prune-plugin
+  - serverless-plugin-typescript
+  - serverless-dynamodb-local
+  - serverless-offline-sns
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  deploymentBucket:
+    name: daily-report-sender-service-service-${opt:stage, 'local'}
+    serverSideEncryption: AES256
+  tracing:
+    lambda: true
+  stage: ${opt:stage, 'local'}
+  region: ${opt:region, 'us-east-1'}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:DescribeTable
+            - dynamodb:Scan
+            - xray:PutTraceSegments
+            - xray:PutTelemetryRecords
+          Resource:
+            - "Fn::GetAtt": [ SquadConfigurationTable, Arn ]
+        - Effect: Allow
+          Action:
+            - sns:Subscribe
+          Resource: ${self:custom.topicArn}
+        - Effect: Allow
+          Action:
+            - sqs:SendMessage
+          Resource:
+            - "Fn::GetAtt": [ ReportDLQ, Arn ]
+
+functions:
+  Produce:
+    handler: src/messaging/handler.produce
+    events:
+      - schedule: cron(30 22 ? * W *)
+    environment:
+      TOPIC_ARN: ${self:custom.topicArn}
+  Consume:
+    handler: src/messaging/handler.consume
+    memorySize: 1600
+    timeout: 60
+    events:
+      - sns:
+          arn: ${self:custom.topicArn}
+          topicName: ${env:SNS_SQS_PREFIX}
+          redrivePolicy:
+            deadLetterTargetRef: ReportDLQ
+
+resources:
+  Resources:
+    SquadConfigurationTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${env:DYNAMO_TABLE_PREFIX}.SquadConfiguration
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    ReportTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${env:SNS_SQS_PREFIX}
+    ReportDLQ:
+      Type: AWS::SQS::Queue
+      Properties:
+        TopicName: ${env:SNS_SQS_PREFIX}-dlq

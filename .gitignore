@@ -66,6 +66,15 @@ typings/
 # SonarLint folder
 /.scannerwork/
 
+#Output folders
 /dist
+/.build
+.serverless/
+
 *.db
+
+# Debug output files
 report.html
+
+# DynamoDB installation folder
+.dynamodb/

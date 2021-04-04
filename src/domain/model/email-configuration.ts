@@ -1,9 +1,12 @@
 import EmailAuthentication from './email-authentication';
+import EmailServer from './email-server';
 
 export default interface EmailConfiguration {
   authentication: EmailAuthentication;
 
-  host: string;
+  server: EmailServer;
 
-  port: number;
+  recipients: Array<string>;
+
+  carbonCopyRecipients: Array<string>
 }
