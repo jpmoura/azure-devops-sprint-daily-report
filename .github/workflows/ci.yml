@@ -8,9 +8,6 @@ on:
     paths:
       - ".github/workflows/ci.yml"
       - "src/**"
-      - "serverless.yml"
-      - ".env.dev"
-      - ".env.prod"
 
 jobs:
   sonarcloud:
