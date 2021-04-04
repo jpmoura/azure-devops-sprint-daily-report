@@ -78,3 +78,6 @@ report.html
 
 # DynamoDB installation folder
 .dynamodb/
+
+# Local ENV
+.env.local
