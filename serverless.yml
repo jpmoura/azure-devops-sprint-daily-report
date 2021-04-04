@@ -112,4 +112,4 @@ resources:
     ReportDLQ:
       Type: AWS::SQS::Queue
       Properties:
-        TopicName: ${env:SNS_SQS_PREFIX}-dlq
+        QueueName: ${env:SNS_SQS_PREFIX}-dlq
