@@ -67,7 +67,7 @@ provider:
             - sns:Publish
             - sns:Subscribe
           Resource:
-            - "Fn::GetAtt": [ ReportTopic, Arn ]
+            - !Ref ReportTopic
         - Effect: Allow
           Action:
             - sqs:SendMessage
