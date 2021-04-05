@@ -77,7 +77,7 @@ functions:
   Produce:
     handler: src/messaging/handler.produce
     events:
-      - schedule: cron(30 22 ? * W *)
+      - schedule: cron(30 22 ? * MON-FRI *)
     environment:
       TOPIC_ARN:
         !Ref ReportTopic
