@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "An serverless automatic application that sends daily reports based on Azure DevOps information",
   "main": "src/messaging/handler.ts",
-  "keywords": ["daily report", "iteration", "sprint", "azure", "devops", "Azure DevOps", "serverless", "sender"],
+  "keywords": [
+    "daily report",
+    "iteration",
+    "sprint",
+    "azure",
+    "devops",
+    "Azure DevOps",
+    "serverless",
+    "sender"
+  ],
   "repository": "https://github.com/jpmoura/azure-devops-sprint-daily-report.git",
   "author": "João Pedro Santos de Moura <moura.joaopedro@gmail.com.br>",
   "license": "MIT",
@@ -46,6 +55,7 @@
     "serverless-dynamodb-local": "^0.2.39",
     "serverless-offline": "^6.9.0",
     "serverless-offline-sns": "^0.68.0",
+    "serverless-plugin-lambda-dead-letter": "^1.2.1",
     "serverless-plugin-typescript": "^1.1.9",
     "serverless-prune-plugin": "^1.4.4",
     "typescript": "^4.2.3"

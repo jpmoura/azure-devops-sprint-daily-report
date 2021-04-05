@@ -18,7 +18,10 @@ export default class AzureDevOpsRepository {
 
   private readonly client: AxiosInstance;
 
-  private readonly logger = new Logger({ name: 'AzureDevOpsRepository' });
+  private readonly logger = new Logger({
+    name: 'AzureDevOpsRepository',
+    type: 'json',
+  });
 
   constructor(pat: string, organization: string, user?: string, password?: string) {
     const authHandler = AzureDevOps.getPersonalAccessTokenHandler(pat);

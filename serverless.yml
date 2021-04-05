@@ -34,6 +34,7 @@ plugins:
   - serverless-dotenv-plugin
   - serverless-deployment-bucket
   - serverless-prune-plugin
+  - serverless-plugin-lambda-dead-letter
   - serverless-plugin-typescript
   - serverless-dynamodb-local
   - serverless-offline-sns
@@ -89,8 +90,9 @@ functions:
       - sns:
           arn: !Ref ReportTopic
           topicName: ${env:SNS_SQS_PREFIX}
-          redrivePolicy:
-            deadLetterTargetRef: ReportDLQ
+    deadLetter:
+      targetArn:
+        GetResourceArn: ReportDLQ
 
 resources:
   Resources:

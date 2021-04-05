@@ -10,6 +10,7 @@ const produceSquadReportProcessMessagesUseCase = new ProduceSquadReportProcessMe
 const consumeSquadReportProcessMessagesUseCase = new ConsumeSquadReportProcessMessagesUseCase();
 const logger = new Logger({
   name: 'messaging.handler',
+  type: 'json',
 });
 
 export const produce: ScheduledHandler = async (event: ScheduledEvent): Promise<void> => {

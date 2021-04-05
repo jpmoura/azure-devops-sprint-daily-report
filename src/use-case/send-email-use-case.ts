@@ -8,6 +8,7 @@ export default class SendEmailUseCase {
 
   private readonly logger = new Logger({
     name: 'SendEmailUseCase',
+    type: 'json',
   });
 
   private validate(request: SendEmailRequest) {

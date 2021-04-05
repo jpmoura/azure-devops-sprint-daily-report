@@ -73,7 +73,7 @@ For a local stage a.k.a. debug, just create a `.env.local` with the following co
 ```
 SLS_DEBUG=*
 AWS_REGION="local"
-AWS_ACCESS_KEY_ID="fake-acess-key-id"
+AWS_ACCESS_KEY_ID="fake-access-key-id"
 AWS_SECRET_ACCESS_KEY="fake-secret-access-key"
 DYNAMO_TABLE_PREFIX="Local.DailyReport"
 DYNAMO_PREFIX_ENDPOINT="http://localhost:7000"
