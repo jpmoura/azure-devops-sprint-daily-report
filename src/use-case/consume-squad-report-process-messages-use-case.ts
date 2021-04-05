@@ -11,6 +11,7 @@ export default class ConsumeSquadReportProcessMessagesUseCase {
 
   private readonly logger = new Logger({
     name: 'ConsumeSquadReportProcessMessagesUseCase',
+    type: 'json',
   });
 
   private validate(request: ConsumeSquadReportProcessMessagesRequest) {
