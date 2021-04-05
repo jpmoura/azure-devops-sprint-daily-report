@@ -1,5 +1,5 @@
 <div style="overflow-x:auto;">
-  <h1><%= it.iteration.name %> (de <%= `${it.iteration.attributes.startDate.getDate() + 1}/${it.iteration.attributes.startDate.getMonth() + 1}` %> até <%= `${it.iteration.attributes.finishDate.getDate() + 1}/${it.iteration.attributes.finishDate.getMonth() + 1}` %>)</h1>
+  <h1><%= it.iteration.name %> (de <%= `${it.iteration.attributes.startDate.getDate()}/${it.iteration.attributes.startDate.getMonth() + 1}` %> até <%= `${it.iteration.attributes.finishDate.getDate() + 1}/${it.iteration.attributes.finishDate.getMonth() + 1}` %>)</h1>
   <table id="backlog">
     <thead>
       <tr>
