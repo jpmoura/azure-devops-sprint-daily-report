@@ -76,6 +76,6 @@ jobs:
           npx sls deploy --region ${{ secrets.AWS_REGION }} --stage dev --verbose
 
       - name: Deploy Production
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run : |
           npx sls deploy --region ${{ secrets.AWS_REGION }} --stage prod --verbose
