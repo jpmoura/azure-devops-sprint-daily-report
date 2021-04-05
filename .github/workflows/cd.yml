@@ -7,6 +7,7 @@ on:
       - develop
     paths:
       - ".github/workflows/cd.yml"
+      - "assets/**"
       - "src/**"
       - "serverless.yml"
       - ".env.dev"
