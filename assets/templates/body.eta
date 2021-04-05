@@ -1,5 +1,5 @@
 <div style="overflow-x:auto;">
-  <h1><%= it.sprint.name %> (de <%= `${it.sprint.attributes.startDate.getDate() + 1}/${it.sprint.attributes.startDate.getMonth() + 1}` %> até <%= `${it.sprint.attributes.finishDate.getDate() + 1}/${it.sprint.attributes.finishDate.getMonth() + 1}` %>)</h1>
+  <h1><%= it.iteration.name %> (de <%= `${it.iteration.attributes.startDate.getDate()}/${it.iteration.attributes.startDate.getMonth() + 1}` %> até <%= `${it.iteration.attributes.finishDate.getDate()}/${it.iteration.attributes.finishDate.getMonth() + 1}` %>)</h1>
   <table id="backlog">
     <thead>
       <tr>
@@ -48,5 +48,5 @@
 
 <div>
   <h1>Saúde da sprint</h1>
-  <img src="data:image/png;base64,<%= it.burndown %>" alt="Burndown <%= it.sprint.name %>" />
+  <img src="data:image/png;base64,<%= it.burndown %>" alt="Burndown <%= it.iteration.name %>" />
 </div>

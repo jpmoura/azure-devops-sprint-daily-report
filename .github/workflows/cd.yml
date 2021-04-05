@@ -1,0 +1,81 @@
+name: CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - ".github/workflows/cd.yml"
+      - "assets/**"
+      - "src/**"
+      - "serverless.yml"
+      - ".env.dev"
+      - ".env.prod"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ["14.x"]
+    steps:
+      - name: "Checkout ${{ github.ref }} branch"
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install packages
+        run: yarn
+
+      - name: Run tests
+        shell: bash
+        run: |
+          yarn test:ci
+
+      - name: Run TypeScript compiler
+        run: |
+          npx tsc
+
+      - name: Replace .env.dev
+        if: github.ref == 'refs/heads/develop'
+        uses: cschleiden/replace-tokens@v1
+        with:
+          files: '[".env.dev"]'
+
+      - name: Replace .env.prod
+        if: github.ref == 'refs/heads/main'
+        uses: cschleiden/replace-tokens@v1
+        with:
+          files: '[".env.prod"]'
+
+      - name: Configure AWS Credentials
+        run: npx sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy Development
+        if: github.ref == 'refs/heads/develop'
+        run : |
+          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage dev --verbose
+
+      - name: Deploy Production
+        if: github.ref == 'refs/heads/master'
+        run : |
+          npx sls deploy --region ${{ secrets.AWS_REGION }} --stage prod --verbose
