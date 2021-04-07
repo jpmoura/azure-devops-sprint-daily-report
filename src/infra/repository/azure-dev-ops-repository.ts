@@ -222,7 +222,7 @@ export default class AzureDevOpsRepository {
       await page.click('[type=submit]');
       await page.waitForTimeout(1500);
       await page.click('#idBtn_Back');
-      await page.waitForTimeout(15000);
+      await page.waitForTimeout(20000);
       screenshot = await page.screenshot(
         {
           clip: {
@@ -257,6 +257,7 @@ export default class AzureDevOpsRepository {
         responseType: 'arraybuffer',
       },
     );
+
     return Buffer.from(response.data, 'binary').toString('base64');
   }
 
