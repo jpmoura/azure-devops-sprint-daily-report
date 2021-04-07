@@ -1,6 +1,13 @@
 name: CI Workflow
 
 on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - ".github/workflows/ci.yml"
+      - "src/**"
   pull_request:
     branches:
       - main
