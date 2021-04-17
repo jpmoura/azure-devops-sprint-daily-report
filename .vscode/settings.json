@@ -15,7 +15,7 @@
   ],
   "cSpell.language": "en,pt,pt_BR",
   "files.associations": {
-    "*.env.development": "env",
-    "*.env.production": "env"
+    "*.env.dev": "env",
+    "*.env.prod": "env"
   }
 }
