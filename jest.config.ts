@@ -6,4 +6,6 @@ export default async (): Promise<Config.InitialOptions> => ({
   testEnvironment: 'node',
   transform: { '^.+\\.ts?$': 'ts-jest' },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  coverageDirectory: 'coverage',
+  reporters: ['default', 'jest-sonar'],
 });
