@@ -1,5 +1,5 @@
 import SquadConfigurationDto from '../domain/interface/squad-configuration-dto';
-import SquadConfigurationRepository from '../infra/repository/squad-repository';
+import SquadConfigurationRepository from '../infra/repository/squad-configuration-repository';
 import TopicRepository from '../infra/repository/topic-repository';
 
 export default class ProduceReportProcessMessagesUseCase {
