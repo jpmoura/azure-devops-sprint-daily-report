@@ -9,7 +9,9 @@ export default class CreateHtmlRequestValidator extends Validator<CreateHtmlRequ
       .notNull()
       .must({ predicate: (backlog) => backlog.length > 0, message: 'Backlog must have at least one item' });
 
-    this.ruleFor('burndown').notEmpty();
+    this.ruleFor('burndown')
+      .notNull()
+      .notEmpty();
 
     this.ruleFor('iteration')
       .notNull();
