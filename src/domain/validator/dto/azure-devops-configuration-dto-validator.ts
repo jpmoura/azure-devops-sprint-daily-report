@@ -7,11 +7,19 @@ export default class AzureDevOpsConfigurationDtoValidator extends
   constructor() {
     super();
 
-    this.ruleFor('hasCustomBurndown').notNull();
-    this.ruleFor('organization').notEmpty();
-    this.ruleFor('project').notEmpty();
-    this.ruleFor('team').notEmpty();
+    this.ruleFor('hasCustomBurndown')
+      .notNull();
+    this.ruleFor('organization')
+      .notNull()
+      .notEmpty();
+    this.ruleFor('project')
+      .notNull()
+      .notEmpty();
+    this.ruleFor('team')
+      .notNull()
+      .notEmpty();
     this.ruleFor('authentication')
+      .notNull()
       .setValidator(
         (dto) => new AzureDevOpsAuthenticationDtoValidator(dto.hasCustomBurndown),
       );

@@ -6,11 +6,17 @@ export default class AzureDevOpsAuthenticationDtoValidator
   constructor(shouldValidateCredentials: boolean) {
     super();
 
-    this.ruleFor('pat').notEmpty();
+    this.ruleFor('pat')
+      .notNull()
+      .notEmpty();
 
     if (shouldValidateCredentials) {
-      this.ruleFor('user').notEmpty();
-      this.ruleFor('password').notEmpty();
+      this.ruleFor('user')
+        .notNull()
+        .notEmpty();
+      this.ruleFor('password')
+        .notNull()
+        .notEmpty();
     }
   }
 }

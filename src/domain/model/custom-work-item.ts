@@ -45,7 +45,7 @@ export default class CustomWorkItem {
   }
 
   static from(workItem: WorkItem): CustomWorkItem {
-    if (!workItem || !workItem.id || !workItem.fields || !workItem.url) {
+    if (!workItem || !workItem.id || !workItem.fields || !workItem.url?.trim()) {
       throw new Error('Invalid source work item');
     }
 

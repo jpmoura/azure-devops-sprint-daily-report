@@ -5,7 +5,8 @@ export default class EmailAuthenticationDtoValidator extends Validator<EmailAuth
   constructor() {
     super();
 
-    this.ruleFor('user').notEmpty();
-    this.ruleFor('password').notNull();
+    this.ruleFor('user')
+      .notNull()
+      .notEmpty();
   }
 }
