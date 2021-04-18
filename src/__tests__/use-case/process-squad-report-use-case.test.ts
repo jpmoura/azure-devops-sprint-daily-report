@@ -1,12 +1,12 @@
 import faker from 'faker';
 import { mocked, MockedObjectDeep } from 'ts-jest/dist/utils/testing';
-import AzureDevOpsConfigurationDto from '../../src/domain/interface/azure-devops-configuration-dto';
-import EmailConfigurationDto from '../../src/domain/interface/email-configuration-dto';
-import ProcessSquadReportRequest from '../../src/domain/use-case/request/process-squad-report-request';
-import BuildDailyReportResponse from '../../src/domain/use-case/response/build-daily-report-response';
-import BuildDailyReportUseCase from '../../src/use-case/build-daily-report-use-case';
-import ProcessSquadReportUseCase from '../../src/use-case/process-squad-report-use-case';
-import SendEmailUseCase from '../../src/use-case/send-email-use-case';
+import AzureDevOpsConfigurationDto from '../../domain/interface/azure-devops-configuration-dto';
+import EmailConfigurationDto from '../../domain/interface/email-configuration-dto';
+import ProcessSquadReportRequest from '../../domain/use-case/request/process-squad-report-request';
+import BuildDailyReportResponse from '../../domain/use-case/response/build-daily-report-response';
+import BuildDailyReportUseCase from '../../use-case/build-daily-report-use-case';
+import ProcessSquadReportUseCase from '../../use-case/process-squad-report-use-case';
+import SendEmailUseCase from '../../use-case/send-email-use-case';
 
 function setupSendEmailUseCaseMock(executeMock: jest.Mock<any, any>): MockedObjectDeep<typeof SendEmailUseCase> {
   const sendEmailUseCaseMock = mocked(SendEmailUseCase, true);

@@ -2,12 +2,12 @@ import faker from 'faker';
 import { mocked } from 'ts-jest/utils';
 import { MockedObjectDeep } from 'ts-jest/dist/utils/testing';
 import { TeamSettingsIteration } from 'azure-devops-node-api/interfaces/WorkInterfaces';
-import BuildDailyReportRequest from '../../src/domain/use-case/request/build-daily-report-request';
-import AzureDevOpsRepository from '../../src/infra/repository/azure-dev-ops-repository';
-import BuildDailyReportUseCase from '../../src/use-case/build-daily-report-use-case';
-import CreateHtmlUseCase from '../../src/use-case/create-html-use-case';
-import CustomWorkItem from '../../src/domain/model/custom-work-item';
-import CreateHtmlResponse from '../../src/domain/use-case/response/create-html-response';
+import BuildDailyReportRequest from '../../domain/use-case/request/build-daily-report-request';
+import AzureDevOpsRepository from '../../infra/repository/azure-dev-ops-repository';
+import BuildDailyReportUseCase from '../../use-case/build-daily-report-use-case';
+import CreateHtmlUseCase from '../../use-case/create-html-use-case';
+import CustomWorkItem from '../../domain/model/custom-work-item';
+import CreateHtmlResponse from '../../domain/use-case/response/create-html-response';
 
 function setupAzureDevOpvRepositoryMock(
   getCurrentSprintMock: jest.Mock<any, any> = jest.fn(),

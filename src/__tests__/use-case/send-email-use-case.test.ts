@@ -2,8 +2,8 @@ import faker from 'faker';
 import Mail from 'nodemailer/lib/mailer';
 import { mocked, MockedObjectDeep } from 'ts-jest/dist/utils/testing';
 import { Logger } from 'tslog';
-import SendEmailRequest from '../../src/domain/use-case/request/send-email-request';
-import SendEmailUseCase from '../../src/use-case/send-email-use-case';
+import SendEmailRequest from '../../domain/use-case/request/send-email-request';
+import SendEmailUseCase from '../../use-case/send-email-use-case';
 
 function setupNodemailerMock(sendMailMock: jest.Mock<any, any>): MockedObjectDeep<typeof Mail> {
   const nodemailerMock = mocked(Mail, true);

@@ -1,8 +1,8 @@
 import { mocked, MockedObjectDeep } from 'ts-jest/dist/utils/testing';
-import SquadConfigurationDto from '../../src/domain/interface/squad-configuration-dto';
-import SquadConfigurationRepository from '../../src/infra/repository/squad-configuration-repository';
-import TopicRepository from '../../src/infra/repository/topic-repository';
-import ProduceReportProcessMessagesUseCase from '../../src/use-case/produce-report-process-messages-use-case';
+import SquadConfigurationDto from '../../domain/interface/squad-configuration-dto';
+import SquadConfigurationRepository from '../../infra/repository/squad-configuration-repository';
+import TopicRepository from '../../infra/repository/topic-repository';
+import ProduceReportProcessMessagesUseCase from '../../use-case/produce-report-process-messages-use-case';
 
 function setupTopicRepositoryMock(publishMock: jest.Mock<any, any>): MockedObjectDeep<typeof TopicRepository> {
   const topicRepositoryMock = mocked(TopicRepository, true);

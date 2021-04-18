@@ -3,8 +3,8 @@ import { promises as fs } from 'fs';
 import faker from 'faker';
 import { MockedObjectDeep } from 'ts-jest/dist/utils/testing';
 import { mocked } from 'ts-jest/utils';
-import CreateHtmlRequest from '../../src/domain/use-case/request/create-html-request';
-import CreateHtmlUseCase from '../../src/use-case/create-html-use-case';
+import CreateHtmlRequest from '../../domain/use-case/request/create-html-request';
+import CreateHtmlUseCase from '../../use-case/create-html-use-case';
 
 function setupEtaMock(renderFileAsyncMock: jest.Mock<any, any>): MockedObjectDeep<typeof Eta> {
   const etaMock = mocked(Eta, true);

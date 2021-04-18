@@ -1,6 +1,6 @@
 import faker from 'faker';
 import { WorkItem } from 'azure-devops-node-api/interfaces/WorkItemTrackingInterfaces';
-import CustomWorkItem from '../../../src/domain/model/custom-work-item';
+import CustomWorkItem from '../../../domain/model/custom-work-item';
 
 describe('workItem is invalid', () => {
   it.each([

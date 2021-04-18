@@ -1,6 +1,4 @@
-import type { Config } from '@jest/types';
-
-export default async (): Promise<Config.InitialOptions> => ({
+module.exports = {
   verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'node',
@@ -8,4 +6,5 @@ export default async (): Promise<Config.InitialOptions> => ({
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   coverageDirectory: 'coverage',
   reporters: ['default', 'jest-sonar'],
-});
+  testRegex: '(/src/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
+};

@@ -1,9 +1,9 @@
 import { SNSEvent, SNSEventRecord } from 'aws-lambda';
 import { mocked, MockedObjectDeep } from 'ts-jest/dist/utils/testing';
 import { Logger } from 'tslog';
-import ConsumeSquadReportProcessMessagesRequest from '../../src/domain/use-case/request/consume-squad-process-messages-request';
-import ConsumeSquadReportProcessMessagesUseCase from '../../src/use-case/consume-squad-report-process-messages-use-case';
-import ProcessSquadReportUseCase from '../../src/use-case/process-squad-report-use-case';
+import ConsumeSquadReportProcessMessagesRequest from '../../domain/use-case/request/consume-squad-process-messages-request';
+import ConsumeSquadReportProcessMessagesUseCase from '../../use-case/consume-squad-report-process-messages-use-case';
+import ProcessSquadReportUseCase from '../../use-case/process-squad-report-use-case';
 
 function setupProcessProcessSquadReportUseCaseMock(executeMock: jest.Mock<any, any>): MockedObjectDeep<typeof ProcessSquadReportUseCase> {
   const processSquadReportUseCaseMock = mocked(ProcessSquadReportUseCase, true);
