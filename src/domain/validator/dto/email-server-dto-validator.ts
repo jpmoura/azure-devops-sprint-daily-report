@@ -5,7 +5,11 @@ export default class EmailServerDtoValidator extends Validator<EmailServerDto> {
   constructor() {
     super();
 
-    this.ruleFor('host').notEmpty();
-    this.ruleFor('port').greaterThanOrEqualTo(0);
+    this.ruleFor('host')
+      .notNull()
+      .notEmpty();
+
+    this.ruleFor('port')
+      .greaterThanOrEqualTo(0);
   }
 }

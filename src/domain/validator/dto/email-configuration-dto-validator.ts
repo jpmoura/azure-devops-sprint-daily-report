@@ -20,12 +20,14 @@ export default class EmailConfigurationDtoValidator extends Validator<EmailConfi
       .setValidator(() => this.emailServerDtoValidator);
 
     this.ruleForEach('carbonCopyRecipients')
+      .notNull()
       .notEmpty()
       .emailAddress()
       .unless((dto) => !dto.carbonCopyRecipients || dto.carbonCopyRecipients.length === 0);
 
     this.ruleFor('recipients').notNull();
     this.ruleForEach('recipients')
+      .notNull()
       .notEmpty()
       .emailAddress();
   }

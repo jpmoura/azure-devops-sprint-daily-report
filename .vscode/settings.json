@@ -1,16 +1,21 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "eslint.validate": [
-        "javascript",
-        "typescript",
-        "typescriptreact"
-    ],
-    "eslint.alwaysShowStatus": true,
-    "eslint.packageManager": "yarn",
-    "cSpell.words": [
-        "burndown",
-        "tslog"
-    ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+  "cSpell.words": [
+    "burndown",
+    "tslog"
+  ],
+  "cSpell.language": "en,pt,pt_BR",
+  "files.associations": {
+    "*.env.dev": "env",
+    "*.env.prod": "env"
+  }
 }

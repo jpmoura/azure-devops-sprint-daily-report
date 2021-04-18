@@ -72,6 +72,9 @@ typings/
 .serverless/
 
 *.db
+inputs/consume.debug.json
+inputs/consume.json
+inputs/produce.json
 
 # Debug output files
 report.html

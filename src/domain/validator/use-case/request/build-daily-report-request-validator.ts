@@ -6,7 +6,7 @@ export default class BuildDailyReportRequestValidator extends Validator<BuildDai
     super();
 
     this.ruleFor('hasCustomBurndown').notNull();
-    this.ruleFor('projectName').notEmpty();
-    this.ruleFor('teamName').notEmpty();
+    this.ruleFor('projectName').notNull().notEmpty();
+    this.ruleFor('teamName').notNull().notEmpty();
   }
 }

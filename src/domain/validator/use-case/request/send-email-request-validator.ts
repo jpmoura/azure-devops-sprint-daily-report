@@ -20,16 +20,23 @@ export default class SendEmailRequestValidator extends Validator<SendEmailReques
       .setValidator(() => this.emailServerDtoValidator);
 
     this.ruleForEach('carbonCopyRecipients')
+      .notNull()
       .notEmpty()
       .emailAddress()
       .unless((dto) => !dto.carbonCopyRecipients || dto.carbonCopyRecipients.length === 0);
 
     this.ruleFor('recipients').notNull();
     this.ruleForEach('recipients')
+      .notNull()
       .notEmpty()
       .emailAddress();
 
-    this.ruleFor('htmlContent').notEmpty();
-    this.ruleFor('subject').notEmpty();
+    this.ruleFor('htmlContent')
+      .notNull()
+      .notEmpty();
+
+    this.ruleFor('subject')
+      .notNull()
+      .notEmpty();
   }
 }
