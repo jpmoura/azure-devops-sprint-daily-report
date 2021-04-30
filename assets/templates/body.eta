@@ -13,8 +13,9 @@
     <tbody>
     <% it.backlog.forEach(function(backlogItem) { %>
       <%
-        var stateClass = '';
-        var stateText = '';
+        var stateClass;
+        var stateText;
+
         switch(backlogItem.state) {
           case 'New':
             stateClass = 'sprint-backlog';
@@ -24,6 +25,9 @@
             stateClass = 'development';
             stateText = 'Em Desenvolvimento';
             break;
+          case 'Blocked':
+            stateClass = 'blocked';
+            stateText = 'Bloqueado';
           case 'Homologação':
             stateClass = 'homologation';
             stateText = 'Em Homologação';
@@ -32,6 +36,9 @@
             stateClass = 'closed';
             stateText = 'Finalizado';
             break;
+          default:
+            stateClass = '';
+            stateText = backlogItem.state;
         }
       %>
     <tr>
