@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-sprint-daily-report",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An serverless automatic application that sends daily reports based on Azure DevOps information",
   "main": "src/messaging/handler.ts",
   "keywords": [
