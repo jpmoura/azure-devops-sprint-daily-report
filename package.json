@@ -76,7 +76,7 @@
     "azure-devops-node-api": "^10.2.1",
     "chrome-aws-lambda": "^8.0.2",
     "dotenv": "^8.2.0",
-    "eta": "^1.12.1",
+    "eta": "^2.0.0",
     "fluentvalidation-ts": "^2.2.1",
     "nodemailer": "^6.6.1",
     "puppeteer-core": "^8.0.0",
